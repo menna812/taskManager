@@ -62,9 +62,10 @@ bash
    cp .env.example .env
 
 4. *Generate App Key*
-    php artisan key:generate
+    bash
+       php artisan key:generate
    
-5. *Run migrations*
+6. *Run migrations*
    
 bash
    php artisan migrate
