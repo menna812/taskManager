@@ -1,61 +1,147 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive task management web application built with Laravel that allows users to create, manage, and organize their personal tasks with advanced features like soft deletion, filtering, and user authentication.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Authentication System
+- *User Registration*: Create new accounts with name, email, and password
+- *User Login*: Secure login with email and password
+- *Seamless Toggle*: Easy navigation between login and signup forms done using bootstrap
+- *Session Management*: Secure logout functionality
+- *Password Security*: All passwords are hashed and stored securely
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Custom Welcome Page
+- *Call-to-Action Buttons*: Clear navigation to login or signup
+- *Responsive Design*: Mobile-friendly layout using Bootstrap 5
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Task Management System
+- *Create Tasks*: Add new tasks with title, description, and due date
+- *View All Tasks*: Display all your personal tasks in an organized list
+- *Update Tasks*: Edit task details, descriptions, due dates, and completion status
+- *Mark Complete/Pending*: Toggle task completion status
+- *Delete Tasks*: Soft delete tasks (move to trash)
 
-## Learning Laravel
+### Advanced Task Features
+- *Smart Filtering*: Filter tasks by status (All Tasks, Completed Only, Pending Only)
+- *Due Date Management*: Set and display due dates for better planning
+- *Timestamps*: Track when tasks were created and last updated
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Trash & Recovery System
+- *Recently Deleted View*: Separate page for managing deleted tasks
+- *Restore Functionality*: Recover accidentally deleted tasks
+- *30-Day Auto-Deletion*: Tasks are permanently removed after 30 days in trash
+- *Permanent Delete Option*: Immediately and permanently remove tasks
+- *Deletion Warnings*: Clear warnings before permanent deletion
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠 Installation & Setup
 
-## Laravel Sponsors
+### Prerequisites
+- PHP 8.1 or higher
+- Composer
+- MySQL or another supported database
+- Node.js and npm (optional, for asset compilation)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Installation Steps
 
-### Premium Partners
+1. *Clone the repository*
+   
+bash
+   git clone <repository-url>
+   cd laravel-task-manager
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+2. *Install dependencies*
+   
+bash
+   composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. *Create Create environment file*
+   bash
+   cp .env.example .env
 
-## Code of Conduct
+4. *Generate App Key*
+    php artisan key:generate
+   
+5. *Run migrations*
+   
+bash
+   php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. *Seed the database*
+   
+bash
+   php artisan db:seed
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. *Start the development server*
+   
+bash
+   php artisan serve
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8. *Access the application*
+   
+Visit: http://localhost:8000
+
+
+## 👥 Demo Users
+
+The application comes with pre-seeded demo users for testing:
+
+### User 1
+- *Email*: test1@example.com
+- *Password*: 123456
+- *Tasks*: 10 randomly generated tasks with various statuses
+
+### User 2
+- *Email*: test2@example.com
+- *Password*: 123456
+- *Tasks*: 10 randomly generated tasks with various statuses
+
+Each demo user has their own set of tasks with:
+- Random titles and descriptions
+- Mixed completion statuses (completed/pending)
+- Various creation dates for realistic testing
+
+## 🎯 Usage Guide
+
+### Getting Started
+1. Visit the welcome page at http://localhost:8000
+2. Click "Login" or "Sign Up" to access the application
+3. Use demo credentials or create a new account
+
+### Managing Tasks
+1. *Creating Tasks*:
+   - Click "Add New Task" button
+   - Fill in title, description (optional), and due date (optional) (notice: you can't create a date that has already passed will give error)
+   - Submit to create your task
+
+2. *Viewing Tasks*:
+   - All tasks are displayed on the main tasks page
+   - Use the filter dropdown to view specific task types
+   - Clear filters to see all tasks again
+
+3. *Editing Tasks*:
+   - Click the pencil icon next to any task
+   - Modify details and completion status
+   - Save changes
+
+4. *Deleting Tasks*:
+   - Click the trash icon next to any task
+   - Confirm deletion in the modal dialog
+   - Task moves to "Recently Deleted"
+
+### Trash Management
+1. *Accessing Trash*:
+   - Click "Recently Deleted" in the navigation
+   - View all deleted tasks with deletion timestamps
+
+2. *Restoring Tasks*:
+   - Click "Restore" button next to any deleted task
+   - Task returns to your active task list
+
+3. *Permanent Deletion*:
+   - Click "Delete Forever" for immediate permanent removal
+   - Or wait 30 days for automatic permanent deletion
